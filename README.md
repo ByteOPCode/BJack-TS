@@ -1,19 +1,13 @@
 A Bjack Card game Implementation in TS for mmc
 
-#Implementations
-Listing cards in Deck 
-Draw unique card 
+
 
 
 #todo
 
-Create user and dealer profile
+Define dealer strategy to win
 
-write game logic
-
-create global vars
-
-list rules and write validatiors for rules
+split card if initial two cards have same rank with different suite.  
 
 create spec file and write tests with max coverage
 
