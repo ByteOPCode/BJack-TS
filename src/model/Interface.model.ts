@@ -8,5 +8,6 @@ export interface CardCharacter {
 export interface PlayerDesk {
   cards: CardCharacter[];
   hasAce?: Boolean;
-  aceVal?: 1 | 11;
+  
+  totalCardVal?:Number;
 }

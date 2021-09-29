@@ -1,5 +1,5 @@
-import { CardCharacter } from './Interface.model';
-import { logger } from './util';
+import { CardCharacter } from '../model/Interface.model';
+import { logger } from '../util/util';
 
 class GenerateCardDeck {
   private suitsList = ['spade', 'clover', 'diamond', 'heart'];
@@ -22,7 +22,7 @@ class GenerateCardDeck {
   private cardDeck: CardCharacter[] = [];
   // [Spade ♤, Clover ♣️, Diamond ♢,Heard ♥️]
   constructor(isShuffled?: Boolean) {
-    this.shuffledState = isShuffled ?? false;
+    this.shuffledState = isShuffled || false;
   }
 
   generateCard() {
@@ -46,7 +46,7 @@ class GenerateCardDeck {
               rank: rank,
               cardType: suite,
               Symbol: `${rank}-${suite}`,
-              value: 0
+              value: 11
             });
             break;
           default:
@@ -72,7 +72,7 @@ class GenerateCardDeck {
       return cardsList[randomIndex];
     } catch (error: any) {
       //NotifyErrorEvent (timenow, error, listOfCards)+
-      logger.log(error?.stackTrace());
+      logger.log(error.stack);
     }
   }
 }
