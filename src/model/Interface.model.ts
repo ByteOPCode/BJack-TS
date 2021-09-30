@@ -3,11 +3,12 @@ export interface CardCharacter {
   cardType: string;
   value: string | number;
   Symbol: string;
+  isAceValAssigned?:boolean;
 }
 
 export interface PlayerDesk {
   cards: CardCharacter[];
   hasAce?: Boolean;
   
-  totalCardVal?:Number;
+  totalCardVal?:number;
 }

@@ -1,6 +1,14 @@
 import { CardCharacter } from '../model/Interface.model';
 import { logger } from '../util/util';
 
+ /**
+ * @Class {GenerateCardDeck} Dynamically generates the Deck of cards with suits, Card Rank and allocates the value for the card according to NlackJackgame .
+ *
+ * @param {Boolean} isShuffled Defines whether or not to shuffle the deck of cards.  
+ *
+ * @returns Deck Instance
+ */
+
 class GenerateCardDeck {
   private suitsList = ['spade', 'clover', 'diamond', 'heart'];
   private cardRanks = [
@@ -64,6 +72,14 @@ class GenerateCardDeck {
       ? this.cardDeck.sort(() => Math.random() - 0.5)
       : this.cardDeck;
   }
+
+   /**
+ * @Method {drawRandomCard} returns a random card from list of cards passed as parameters .
+ *
+ * @param {CardCharacter[]} player Defines the character profile actively playing the game and update the card to respective profile on game instance  
+ *
+ * @returns  {CardCharacter} cardsList Object with CardCharacter properties.
+ */
 
   drawRandomCard(listOfCards?: CardCharacter[]) {
     const cardsList: CardCharacter[] = listOfCards || this.generateCard();
