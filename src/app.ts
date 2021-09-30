@@ -177,5 +177,5 @@ const declareWinner = (
   reason: string = 'bust'
 ) => {
   console.log(`${reason}; ${participant} wins the game`);
-  exit(1);
+  exit();
 };
