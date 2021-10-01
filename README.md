@@ -3,13 +3,9 @@ A Bjack Card game Implementation in TS for mmc
 
 
 
-#todo
+#Roadmap
 
-Define dealer strategy to win
-
-split card if initial two cards have same rank with different suite.  
-
-create spec file and write tests with max coverage
+Define test cases and include unit test coverage for app.ts
 
 #optional 
 
