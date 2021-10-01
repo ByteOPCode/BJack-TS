@@ -47,13 +47,11 @@ class InitGame {
    */
 
   drawRandomCard = (player: 'player' | 'dealer') => {
-    const card = this.shuffledCardDeck.shift();
-    if (card === undefined) throw new Error('No more cards in the Deck');
+    const card = this.shuffledCardDeck?.shift();
+    if (card === undefined) throw Error('No more cards in the Deck');
     if (player == 'player') this.customersHand.cards.push(card);
     else this.dealersHand.cards.push(card);
   };
-
-  showPlayerAndDealerCard = () => {};
 }
 
 const gameSession = new InitGame();
@@ -84,6 +82,7 @@ const promptCard = (player: 'player' | 'dealer' = 'player') => {
         name: 'prompt',
         message: 'What do you want to do?',
         choices: ['Hit', 'stand'],
+        default: 'stand',
         filter(val) {
           return val.toLowerCase();
         }
@@ -145,7 +144,7 @@ const calculateDealerStrategy = () => {
       gameSession.drawRandomCard('dealer');
       calculateDealerStrategy();
       break;
-    case gameSession.dealersHand.totalCardVal > 18:
+    case gameSession.dealersHand.totalCardVal >= 18:
       console.log('Dealer Total=>', gameSession.dealersHand.totalCardVal);
       console.log('Player Total =>', gameSession.customersHand.totalCardVal);
       if (
@@ -177,5 +176,6 @@ const declareWinner = (
   reason: string = 'bust'
 ) => {
   console.log(`${reason}; ${participant} wins the game`);
-  exit();
+  return;
 };
+export { calculateDealerStrategy, declareWinner, InitGame, promptCard };

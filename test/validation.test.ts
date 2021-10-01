@@ -22,9 +22,9 @@ describe('evaluateAce', () => {
     jest.mock('inquirer', () => {
       return { prompt: jest.fn() };
     });
-    expect(evaluateAce(randomlyDrawnCards)).toHaveLength(2);
+    expect(evaluateAce(randomlyDrawnCards).length).toBeGreaterThanOrEqual(1);
     randomlyDrawnCards.push(arbitraryCard);
-    expect(evaluateAce(randomlyDrawnCards)).toEqual([arbitraryCard]);
+    expect(evaluateAce(randomlyDrawnCards)).toContain(arbitraryCard);
   });
   describe('Accumulator', () => {
     it('verify accumulator returns a number', () => {
