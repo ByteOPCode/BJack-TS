@@ -68,6 +68,7 @@ class GenerateCardDeck {
       });
     });
 
+    
     return this.shuffledState
       ? this.cardDeck.sort(() => Math.random() - 0.5)
       : this.cardDeck;
