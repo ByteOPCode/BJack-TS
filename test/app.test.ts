@@ -18,7 +18,7 @@ describe('gameSession', () => {
     expect(calculateDealerStrategy()).toBeUndefined();
   });
 
-  it('To validates if games exists on Player or dealer wins ', () => {
+  it('To validates if games exits on Player or dealer wins ', () => {
     gameSession.shuffledCardDeck = [];
     expect(declareWinner('player')).toBeUndefined();
     expect(declareWinner('dealer')).toBeUndefined();
