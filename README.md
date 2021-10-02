@@ -4,14 +4,17 @@ A Bjack Card game Implementation in TS for mmc
 
 #Usage 
 
-With nodejs 14+ and npm 7+ 
-   ` npm install` 
-   ` npm start` 
-and 
-   ` npm test`
+With nodejs 14+ and npm 7+   
+
+   `npm install`  
+   `npm start`  
+   `npm test`
+
+With Docker-Compose
+
+    docker-compose -f docker-compose.yml up
 
 With Docker
-    `docker-compose -f docker-compose.yml up`
-                    (or)
-    `docker build -t BlackJack:latest .`
-    `docker run BlackJack`
+     
+    docker build -t BlackJack:latest .
+    docker run BlackJack
